@@ -1,0 +1,15 @@
+.header {
+  background: #f4f4f4;
+  text-align: center;
+  padding: 2em;  
+}
+.header-image {
+  max-width: 96px;
+}
+.header-title {
+  font-size: 2.5em;
+  font-weight: bold;
+  text-align: center;  
+}
+
+
