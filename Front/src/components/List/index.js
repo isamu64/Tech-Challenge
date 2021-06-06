@@ -5,7 +5,7 @@ import React from 'react';
 import './list.css';
 
 
-
+//Component
 const List = () => (
   
   <div className = 'list'>

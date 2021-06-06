@@ -1,5 +1,5 @@
-// == Import npm
-import React from 'react';
+//Import React
+import React, {useState} from 'react';
 
 // Import
 import './app.css';
@@ -12,15 +12,29 @@ import List from '../List';
 
 
 
-//Component App
-const App = () => (
+//Component
+const App = () => {
+
+  
+  
+  //const [messageInput, setMessageInput] = useState('');  
+
+  return (
   <div className="app">
     <Header/>
-    <Member/>
+    <Member 
+    onChange={(text) => {
+      console.log('je tape du texte')
+    }}
+    
+    onSubmit={() => {
+      console.log('je soumet le form')
+    }}
+    />
     <List/> 
     <Footer/>   
   </div>
-);
+)};
 
 //Export
 export default App;

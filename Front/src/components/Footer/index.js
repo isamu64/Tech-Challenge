@@ -5,7 +5,7 @@ import React from 'react';
 import './footer.css';
 
 
-
+//Component
 const Footer = () => (
   
   <div className = 'footer'>

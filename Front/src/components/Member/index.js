@@ -5,15 +5,22 @@ import React from 'react';
 import './member.css';
 
 
+//Component
+const Member = ({onChange, onSubmit}) => (
 
-const Member = () => (
   <div className = 'member'>
     <h2 
       className = 'member-title'>
       Ajouter un(e) Argonaute
     </h2>
   
-    <form className="member-form">
+    <form 
+      className="member-form"
+      onSubmit={(evt) => {
+        evt.preventDefault(); 
+        onSubmit();       
+      }}
+    >
       <label 
         className = 'member-label' 
         for="name">
@@ -24,7 +31,11 @@ const Member = () => (
         id="name" 
         name="name" 
         type="text" 
-        placeholder="Charalampos"
+        placeholder="Charalampos" 
+        onChange= {(evt) => {
+          const text = evt.target.value
+          onChange();
+        }}
       />
     
       <button 
@@ -32,6 +43,7 @@ const Member = () => (
         Envoyer
      </button>
     </form>
+    
   </div>
 );
 
