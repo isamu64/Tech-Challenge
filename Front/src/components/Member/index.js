@@ -34,7 +34,7 @@ const Member = ({onChange, onSubmit}) => (
         placeholder="Charalampos" 
         onChange= {(evt) => {
           const text = evt.target.value
-          onChange();
+          onChange(text);
         }}
       />
     

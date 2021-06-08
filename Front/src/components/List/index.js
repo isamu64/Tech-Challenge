@@ -1,12 +1,16 @@
 //Import React
-import React from 'react';
+import React, { useState } from 'react';
 
 //Import CSS file
 import './list.css';
 
 
 //Component
-const List = () => (
+const List = () => {
+  
+  const [newMember, setNewMember] = useState(['Eleftheria', 'Gennadios', 'Lysimachos']);
+  
+  return (
   
   <div className = 'list'>
     <h2 className = 'list-title'>
@@ -30,7 +34,7 @@ const List = () => (
 
     </section>
   </div>
-);
+)};
 
 //Export
 export default List;

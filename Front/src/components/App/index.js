@@ -13,18 +13,15 @@ import List from '../List';
 
 
 //Component
-const App = () => {
-
-  
-  
-  //const [messageInput, setMessageInput] = useState('');  
+const App = () => { 
+   
 
   return (
   <div className="app">
     <Header/>
     <Member 
     onChange={(text) => {
-      console.log('je tape du texte')
+      console.log('je tape du texte', text)
     }}
     
     onSubmit={() => {
