@@ -1,15 +1,15 @@
-#Table
+--Table
 
 DROP TABLE IF EXISTS "members";
 
 
 CREATE TABLE IF NOT EXISTS "members" (
-    "id" INTEGER NOT NULL
+    "id" INTEGER NOT NULL,
     "name" TEXT NOT NULL
 );
 
 
-#Data
+--Data
 
 INSERT INTO "members" ("id", "name") VALUES
 (1, 'Eleftheria'),
