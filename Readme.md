@@ -20,11 +20,33 @@ Start the server
 
 ## Back
 
-Initialize the project
+Initialize the project :
 `npm init -y`
 
 Install all dependencies 
 `npm install express pg dotenv`
+***
+
+## Database
+
+1.Connect with user postgres
+`sudo -i -u postgres`
+
+2.Connect to postgres
+`psql`
+
+3.Create a user with a password to use the database
+`CREATE USER argo WITH PASSWORD 'argo';`
+
+4.Create the database
+`CREATE DATABASE members OWNER 'argo';`
+
+5.Insert the content of members.sql into the database
+
+In a new terminal:
+`psql -U argo -d members -f Back/data/members.sql`
+
+
 
 
 
