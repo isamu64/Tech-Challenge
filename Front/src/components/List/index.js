@@ -1,14 +1,44 @@
 //Import React
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 //Import CSS file
 import './list.css';
+
+//Import axios
+import axios from 'axios';
+
+const BASE_URL = 'http://localhost:3000';
+
+
+
+
 
 
 //Component
 const List = () => {
   
-  const [newMember, setNewMember] = useState(['Eleftheria', 'Gennadios', 'Lysimachos']);
+  const [members, setMembers] = useState([]);
+
+  const home = () => {
+
+    axios ({
+      method: 'get',
+      url: '${BASE_URL}/members'
+    })
+    
+    .then((result) => {
+      const {data} = result;
+      setMembers(data);
+    })
+    .catch((err) => {
+      console.trace(err)
+    })
+  }
+
+  useEffect(()=> {
+    home();
+  }, []);
+  
   
   return (
   

@@ -25,7 +25,7 @@ const App = () => {
     }}
     
     onSubmit={() => {
-      console.log('je soumet le form')
+      console.log('je soumet le formulaire')
     }}
     />
     <List/> 
