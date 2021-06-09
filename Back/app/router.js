@@ -4,8 +4,8 @@ const router = express.Router();
 const membersController = require('./controller/membersController')
 
 //Routes
-router.get('/members', );
-router.post('/members', )
+router.get('/members', membersController.home);
+router.post('/members', membersController.create)
 
 
 //Export Router
