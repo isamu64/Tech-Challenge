@@ -23,7 +23,7 @@ const List = () => {
 
     axios ({
       method: 'get',
-      url: '${BASE_URL}/members'
+      url: '${BASE_URL}/'
     })
     
     .then((result) => {

@@ -5,7 +5,7 @@ const membersController = {
 
     home:  (request, response) => {
 
-        dataMapper.getAllMembers ((error, results) => {
+        dataMapper.getAllMembers ((error, data) => {
 
             if (error) {
                 console.log(error);
