@@ -13,12 +13,16 @@ const membersController = {
                 return;
             }
 
+            const members = data.rows;
+
+            response.send(members);
+
             
         })
     },
 
     create: (request, response) => {
-        
+
     }
 }
 
