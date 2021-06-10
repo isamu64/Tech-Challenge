@@ -14,7 +14,7 @@ const membersController = {
             }
 
             const members = data.rows;
-
+            
             response.send(members);
 
             

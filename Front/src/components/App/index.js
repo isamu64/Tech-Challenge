@@ -11,11 +11,37 @@ import Member from '../Member';
 import List from '../List';
 
 
+const BASE_URL = 'http://localhost:3000';
+import axios from 'axios';
 
 //Component
 const App = () => { 
    
 
+  //Local state
+  const [members, setMembers] = useState([]);
+
+  
+  const home = () => {
+    console.log('affiche les membres');
+    axios ({
+      method: 'get',
+      url: `${BASE_URL}`
+    })
+    
+    .then((res) => {      
+      console.log(res);
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+
+    useEffect(()=> {
+      home()
+    }, []);
+
+  }
+  
   return (
   <div className="app">
     <Header/>

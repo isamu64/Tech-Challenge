@@ -5,7 +5,7 @@ const dataMapper = {
 
     getAllMembers: (callback) => {
         
-        const sql = 'SELECT * FROM members';
+        const sql = 'SELECT * FROM "members"';
 
         client.query(sql, callback)
     },

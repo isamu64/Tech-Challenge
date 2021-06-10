@@ -5,44 +5,40 @@ import React, { useState, useEffect } from 'react';
 import './list.css';
 
 //Import axios
-import axios from 'axios';
+//import axios from 'axios';
 
-const BASE_URL = 'http://localhost:3000';
-
-
-
-
-
+//const BASE_URL = 'http://localhost:3000';
 
 //Component
 const List = () => {
   
-  const [members, setMembers] = useState([]);
+  //Local state
+  //const [members, setMembers] = useState([]);
 
-  const home = () => {
+  
+  //const home = () => {
 
-    axios ({
-      method: 'get',
-      url: '${BASE_URL}/'
-    })
+    //axios ({
+      //method: 'get',
+      //url: `${BASE_URL}/`
+   // })
     
-    .then((result) => {
-      const {data} = result;
-      setMembers(data);
-    })
-    .catch((err) => {
-      console.trace(err)
-    })
-  }
+   // .then((res) => {      
+   //   const {data} = res;
+   //   console.log(data);
+   //   setMembers(data);
+  //  })
+   // .catch((err) => {
+  //    console.log(err)
+  //  })
 
-  useEffect(()=> {
-    home();
-  }, []);
-  
-  
+  //  useEffect(()=> {
+    //  home()
+   // }, []);
+
   return (
-  
-  <div className = 'list'>
+    
+    <div className = 'list'>
     <h2 className = 'list-title'>
       Membres de l'équipage
     </h2>
@@ -64,7 +60,12 @@ const List = () => {
 
     </section>
   </div>
+
+    
+  
 )};
 
 //Export
 export default List;
+
+
