@@ -1,5 +1,6 @@
 //Import React
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import axios from 'axios';
 
 // Import
 import './app.css';
@@ -10,14 +11,13 @@ import Footer from '../Footer';
 import Member from '../Member';
 import List from '../List';
 
-
+//URl to connect to the back
 const BASE_URL = 'http://localhost:3000';
-import axios from 'axios';
+
 
 //Component
 const App = () => { 
    
-
   //Local state
   const [members, setMembers] = useState([]);
 
@@ -31,16 +31,17 @@ const App = () => {
     
     .then((res) => {      
       console.log(res);
+      const {data} = res;
+      setMembers(data);
     })
     .catch((err) => {
       console.log(err)
     })
-
-    useEffect(()=> {
-      home()
-    }, []);
-
   }
+  useEffect(()=> {
+    home()
+  }, []);
+  console.log(members);
   
   return (
   <div className="app">
@@ -54,7 +55,7 @@ const App = () => {
       console.log('je soumet le formulaire')
     }}
     />
-    <List/> 
+    <List members= {members}/> 
     <Footer/>   
   </div>
 )};

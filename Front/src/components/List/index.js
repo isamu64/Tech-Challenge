@@ -1,69 +1,39 @@
-//Import React
-import React, { useState, useEffect } from 'react';
+//Import React 
+import React from 'react';
 
 //Import CSS file
 import './list.css';
 
-//Import axios
-//import axios from 'axios';
-
-//const BASE_URL = 'http://localhost:3000';
 
 //Component
-const List = () => {
+const List = ({members}) => (
   
-  //Local state
-  //const [members, setMembers] = useState([]);
-
   
-  //const home = () => {
-
-    //axios ({
-      //method: 'get',
-      //url: `${BASE_URL}/`
-   // })
-    
-   // .then((res) => {      
-   //   const {data} = res;
-   //   console.log(data);
-   //   setMembers(data);
-  //  })
-   // .catch((err) => {
-  //    console.log(err)
-  //  })
-
-  //  useEffect(()=> {
-    //  home()
-   // }, []);
-
-  return (
-    
     <div className = 'list'>
     <h2 className = 'list-title'>
       Membres de l'équipage
     </h2>
+
     <section>
-      <div 
-        className="list-item">
-        Eleftheria
-      </div>
-
-      <div 
-        className="list-item">
-        Gennadios
-     </div>
-
-      <div 
-        className="list-item">
-        Lysimachos
-      </div>
+      
+      {
+      members.map((memberObject) => (
+        <div
+          className="list-item"
+          key = {memberObject.id}
+        >
+          {memberObject.name}
+        </div>
+      ))
+      }
+      
 
     </section>
   </div>
 
     
   
-)};
+);
 
 //Export
 export default List;
