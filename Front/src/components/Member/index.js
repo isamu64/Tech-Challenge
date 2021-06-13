@@ -10,18 +10,19 @@ const BASE_URL = 'http://localhost:3000';
 
 
 //Component
-const Member = ({setMembers, onChange, onSubmit}) => {
+const Member = ({member, handleChange, handleSubmit}) => {
   
   //const [inputText, setInputText] = useState('');
-  //const [members, setMembers] = useState([]);
+  const [members, setMembers] = useState([]);
 
+  const {name} = members;
 
   const create = () => {
     //console.log('affiche les membres');
     axios ({
       method: 'post',
       url: `${BASE_URL}/members`,
-      data: name
+      name
     })
     
     .then((res) => {      
@@ -34,10 +35,7 @@ const Member = ({setMembers, onChange, onSubmit}) => {
     })
   }
 
-  //useEffect(()=> {
-  //  create()
- // }, []);
-
+  
 
   return (
     <div className = 'member'>
@@ -47,14 +45,15 @@ const Member = ({setMembers, onChange, onSubmit}) => {
     </h2>
   
     <form
-      //method='post'
-      //action='http://localhost:3000/members' 
+      method='POST'
+      action='/members' 
       className="member-form"
 
       onSubmit={(evt) => {        
         
-        evt.preventDefault();      
-        onSubmit();           
+        evt.preventDefault();
+        handleSubmit();
+        create();
       }}
     >
       <label 
@@ -64,13 +63,14 @@ const Member = ({setMembers, onChange, onSubmit}) => {
       </label>
     
       <input 
+        type="text" 
         id="name" 
         name="name" 
-        type="text" 
         placeholder="Nom du nouveau membre" 
+        //value={members.name}
         onChange= {(evt) => {
           const text = evt.target.value
-          onChange(text);
+          handleChange(text);
         }}
         
       />

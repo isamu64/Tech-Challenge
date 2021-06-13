@@ -8,7 +8,7 @@ import './list.css';
 
 
 //Component
-const List = ({members}) => {
+const List = ({member}) => {
   
   
   return (
@@ -21,7 +21,7 @@ const List = ({members}) => {
     <section>
       
       {
-      members.map((memberObject) => (
+      member.map((memberObject) => (
         <div
           className="list-item"
           key = {memberObject.id}

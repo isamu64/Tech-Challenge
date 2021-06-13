@@ -45,43 +45,45 @@ const App = () => {
   //console.log(members);
 
 
-  //const create = () => {
+ // const create = () => {
     //console.log('affiche les membres');
-    //axios ({
-     // method: 'post',
-     // url: `${BASE_URL}/members`,
-     // data:name
-  //  })
+  //axios ({
+   //   method: 'post',
+    //  url: `${BASE_URL}/members`,
+    //  data:name
+ //  })
     
   //  .then((res) => {      
   //    console.log(res);
-   //   const {data} = res;
-  //    setMembers(data);
+  //   const {data} = res;
+   //   setMembers(data);
   //  })
- //   .catch((err) => {
-  //    console.log(err)
-  //  })
+  //  .catch((err) => {
+ //     console.log(err)
+ //   })
 //  }
  // useEffect(()=> {
-//    create()
- // }, [members]);
+ //   create()
+  //}, []);
   //console.log(members);
   
   return (
   <div className="app">
     <Header/>
     <Member
-    setMembers={setMembers} 
-    onChange={(text) => {
+    member= {members}
+    //inputText='pouet'
+    //setMembers={setMembers} 
+    handleChange={(text) => {
       console.log('je tape du texte', text)
     }}
     
-    onSubmit={() => {
+    handleSubmit={() => {
       console.log('je soumet le formulaire')
     }}
     //text={setInputText}
     />
-    <List members= {members}/> 
+    <List member= {members}/> 
     <Footer/>   
   </div>
 )};
