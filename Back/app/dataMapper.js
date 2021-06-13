@@ -5,13 +5,14 @@ const dataMapper = {
 
     getAllMembers: (callback) => {
         
-        const sql = 'SELECT * FROM "members"';
-
+        const sql = 'SELECT * FROM "members"';        
         client.query(sql, callback)
     },
 
-    addAMember:(callback) => {
-
+    addAMember:(data,callback) => {
+        
+        const sql = `INSERT INTO "members" ("name") VALUES ('${data.name}')`;
+        client.query(sql, callback)
     }
 
 }

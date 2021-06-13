@@ -23,6 +23,21 @@ const membersController = {
 
     create: (request, response) => {
 
+        //console.log(request.body);
+        const data = request.body;
+
+        dataMapper.addAMember (data,(error, data) => {
+
+
+            if (error) {
+                console.log(error);
+                response.send(`pas d'équipage`);
+                return;
+            }
+
+            const addMember = data.rows;
+            response.send(addMember);
+        })
     }
 }
 

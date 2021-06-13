@@ -20,10 +20,11 @@ const App = () => {
    
   //Local state
   const [members, setMembers] = useState([]);
+  //const [inputText, setInputText] = useState('');
 
   
   const home = () => {
-    console.log('affiche les membres');
+    //console.log('affiche les membres');
     axios ({
       method: 'get',
       url: `${BASE_URL}`
@@ -41,12 +42,36 @@ const App = () => {
   useEffect(()=> {
     home()
   }, []);
-  console.log(members);
+  //console.log(members);
+
+
+  //const create = () => {
+    //console.log('affiche les membres');
+    //axios ({
+     // method: 'post',
+     // url: `${BASE_URL}/members`,
+     // data:name
+  //  })
+    
+  //  .then((res) => {      
+  //    console.log(res);
+   //   const {data} = res;
+  //    setMembers(data);
+  //  })
+ //   .catch((err) => {
+  //    console.log(err)
+  //  })
+//  }
+ // useEffect(()=> {
+//    create()
+ // }, [members]);
+  //console.log(members);
   
   return (
   <div className="app">
     <Header/>
-    <Member 
+    <Member
+    setMembers={setMembers} 
     onChange={(text) => {
       console.log('je tape du texte', text)
     }}
@@ -54,6 +79,7 @@ const App = () => {
     onSubmit={() => {
       console.log('je soumet le formulaire')
     }}
+    //text={setInputText}
     />
     <List members= {members}/> 
     <Footer/>   

@@ -1,14 +1,18 @@
 //Import React 
 import React from 'react';
 
+
 //Import CSS file
 import './list.css';
 
 
+
 //Component
-const List = ({members}) => (
+const List = ({members}) => {
   
   
+  return (
+
     <div className = 'list'>
     <h2 className = 'list-title'>
       Membres de l'équipage
@@ -30,10 +34,13 @@ const List = ({members}) => (
 
     </section>
   </div>
+  )
+    };
+    
 
     
   
-);
+
 
 //Export
 export default List;
