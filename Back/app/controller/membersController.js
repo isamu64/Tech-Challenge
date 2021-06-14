@@ -5,15 +5,15 @@ const membersController = {
 
     home:  (request, response) => {
 
-        dataMapper.getAllMembers ((error, data) => {
+        dataMapper.getAllMembers ((error, result) => {
 
             if (error) {
-                console.log(error);
+                console.error(error);
                 response.send(`pas d'équipage`);
                 return;
             }
-
-            const members = data.rows;
+            console.log(result);
+            const members = result.rows;
             
             response.send(members);
 
@@ -21,22 +21,21 @@ const membersController = {
         })
     },
 
-    create: (request, response) => {
+    addMember: (request, response) => {
 
         //console.log(request.body);
-        const data = request.body;
+        const memberInfo = request.body;
 
-        dataMapper.addAMember (data,(error, data) => {
+        dataMapper.addAMember (memberInfo,(error, result) => {
 
 
             if (error) {
-                console.log(error);
-                response.send(`pas d'équipage`);
-                return;
-            }
-
-            const addMember = data.rows;
-            response.send(addMember);
+                console.error(error);
+                response.status(500).send(error);
+                return;               
+            }            
+                response.redirect('http://localhost:8080');
+            
         })
     }
 }

@@ -5,7 +5,7 @@ const membersController = require('./controller/membersController')
 
 //Routes
 router.get('/', membersController.home);
-router.post('/members', membersController.create)
+router.post('/members', membersController.addMember)
 
 
 //Export Router

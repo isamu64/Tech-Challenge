@@ -39,39 +39,37 @@ const App = () => {
       console.log(err)
     })
   }
-  useEffect(()=> {
+
+  const addMember = () => {
+    //console.log('affiche les membres');
+    const {name} = members;
+  axios ({
+      method: 'post',
+      url: `${BASE_URL}/members`,
+      name
+   })
+    
+    .then((res) => {      
+      console.log(res);
+     const {data} = res;
+      setMembers(data);
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+  }
+ 
+
+  useEffect(()=> {    
     home()
   }, []);
-  //console.log(members);
-
-
- // const create = () => {
-    //console.log('affiche les membres');
-  //axios ({
-   //   method: 'post',
-    //  url: `${BASE_URL}/members`,
-    //  data:name
- //  })
-    
-  //  .then((res) => {      
-  //    console.log(res);
-  //   const {data} = res;
-   //   setMembers(data);
-  //  })
-  //  .catch((err) => {
- //     console.log(err)
- //   })
-//  }
- // useEffect(()=> {
- //   create()
-  //}, []);
-  //console.log(members);
+  console.log('contenu du state',members);
   
   return (
   <div className="app">
     <Header/>
     <Member
-    member= {members}
+    //member= {members}
     //inputText='pouet'
     //setMembers={setMembers} 
     handleChange={(text) => {

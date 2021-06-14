@@ -9,9 +9,9 @@ const dataMapper = {
         client.query(sql, callback)
     },
 
-    addAMember:(data,callback) => {
+    addAMember:(memberInfo,callback) => {
         
-        const sql = `INSERT INTO "members" ("name") VALUES ('${data.name}')`;
+        const sql = `INSERT INTO "members" ("name") VALUES ('${memberInfo.name}')`;
         client.query(sql, callback)
     }
 

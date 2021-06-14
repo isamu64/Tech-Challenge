@@ -1,11 +1,11 @@
 //Import React
 import React, {useState, useEffect} from 'react';
-import axios from 'axios';
+//import axios from 'axios';
 
 //Import CSS file
 import './member.css';
 
-const BASE_URL = 'http://localhost:3000';
+//const BASE_URL = 'http://localhost:3000';
 
 
 
@@ -13,27 +13,27 @@ const BASE_URL = 'http://localhost:3000';
 const Member = ({member, handleChange, handleSubmit}) => {
   
   //const [inputText, setInputText] = useState('');
-  const [members, setMembers] = useState([]);
+  //const [members, setMembers] = useState([]);
 
-  const {name} = members;
+  //const {name} = members;
 
-  const create = () => {
+  //const addMember = () => {
     //console.log('affiche les membres');
-    axios ({
-      method: 'post',
-      url: `${BASE_URL}/members`,
-      name
-    })
+    //axios ({
+      //method: 'post',
+      //url: `${BASE_URL}/members`,
+      //name
+    //})
     
-    .then((res) => {      
-      console.log(res);
-      const {data} = res;
-      setMembers(data);
-    })
-    .catch((err) => {
-      console.log(err)
-    })
-  }
+    //.then((res) => {      
+      //console.log(res);
+     // const {data} = res;
+    //  setMembers(data);
+   // })
+   // .catch((err) => {
+   //   console.log(err)
+  //  })
+ // }
 
   
 
@@ -45,15 +45,13 @@ const Member = ({member, handleChange, handleSubmit}) => {
     </h2>
   
     <form
-      method='POST'
-      action='/members' 
+      method='post'
+      action='http://localhost:3000/members' 
       className="member-form"
 
-      onSubmit={(evt) => {        
-        
-        evt.preventDefault();
+      onSubmit={(evt) => {
+        //evt.preventDefault();
         handleSubmit();
-        create();
       }}
     >
       <label 
@@ -67,6 +65,7 @@ const Member = ({member, handleChange, handleSubmit}) => {
         id="name" 
         name="name" 
         placeholder="Nom du nouveau membre" 
+        required
         //value={members.name}
         onChange= {(evt) => {
           const text = evt.target.value
